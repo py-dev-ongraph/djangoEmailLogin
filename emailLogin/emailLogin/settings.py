@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'rest_auth',
+#restframework JWT
+    'rest_framework_jwt',
+
 #main webapplications
     'accounts'
 ]
@@ -112,7 +115,10 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES':('rest_framework.authentication.TokenAuthentication',)
+    'DEFAULT_AUTHENTICATION_CLASSES':(
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        #'rest_framework.authentication.TokenAuthentication',
+        ),
 }
 
 REST_AUTH_SERIALIZERS = {
@@ -120,6 +126,11 @@ REST_AUTH_SERIALIZERS = {
     'TOKEN_SERIALIZER': 'accounts.serializers.CustomLoginResponseSerializer',
 }
 
+#JWT SETTINGS
+'''JWT_AUTH = {
+    'JWT_ALLOW_REFRESH': True,
+}
+'''
 #custom user login settings
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
