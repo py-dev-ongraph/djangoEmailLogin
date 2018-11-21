@@ -127,10 +127,12 @@ REST_AUTH_SERIALIZERS = {
 }
 
 #JWT SETTINGS
-'''JWT_AUTH = {
+JWT_AUTH = {
     'JWT_ALLOW_REFRESH': True,
 }
-'''
+
+REST_USE_JWT = True
+
 #custom user login settings
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
