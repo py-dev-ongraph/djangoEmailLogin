@@ -114,6 +114,12 @@ AUTH_PASSWORD_VALIDATORS = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES':('rest_framework.authentication.TokenAuthentication',)
 }
+
+REST_AUTH_SERIALIZERS = {
+    #'LOGIN_SERIALIZER': 'accounts.serializers.UserLoginSerializer',
+    'TOKEN_SERIALIZER': 'accounts.serializers.CustomLoginResponseSerializer',
+}
+
 #custom user login settings
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True
