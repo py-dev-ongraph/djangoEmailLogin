@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
-from accounts.models import User
+from accounts.models import User, UserFollowedUser
 from django.utils.translation import gettext_lazy as _
 
 
@@ -27,3 +27,4 @@ class UserAdmin(DjangoUserAdmin):
     ordering = ('-id',)
 
 admin.site.register(User, UserAdmin)
+admin.site.register(UserFollowedUser)

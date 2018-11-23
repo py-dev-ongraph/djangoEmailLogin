@@ -5,6 +5,7 @@ from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from accounts.managers import UserManager
+from django.db.models.signals import post_save
 
 class User(AbstractUser):
     username = None
